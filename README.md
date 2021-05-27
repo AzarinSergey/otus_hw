@@ -9,6 +9,7 @@ password: ```password``` (for all resources)
 
    * [DML 9](hw/dml_9.sql) (DML: вставка, обновление, удаление, выборка данных)
    * [Indexes 11](hw/indexes_11.sql)
+   * [DML 12](hw/dml_12.sql) (DML: агрегация и сортировка, CTE, аналитические функции )
 
   
 
