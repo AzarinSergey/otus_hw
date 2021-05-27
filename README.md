@@ -8,6 +8,7 @@ password: ```password``` (for all resources)
 2. Check homeworks:
 
    * [DML 9](hw/dml_9.sql) (DML: вставка, обновление, удаление, выборка данных)
+   * [Indexes 11](hw/indexes_11.sql)
 
   
 
