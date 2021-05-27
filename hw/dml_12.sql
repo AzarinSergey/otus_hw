@@ -127,7 +127,7 @@ CREATE INDEX passenger_name_eng_trgm_index ON bookings.tickets
 SELECT show_trgm(passenger_name) FROM bookings.tickets LIMIT 10;
 
 -- Установим уровень точночти совпадения, результаты выше которого будут выводиться
-SELECT show_limit(), set_limit(0.4);
+SELECT show_limit(), set_limit(0.3);
 
 -- Выполняем запросы и смотрим уровень совпадения
 select passenger_name, similarity(title, 'panov') from bookings.tickets 
