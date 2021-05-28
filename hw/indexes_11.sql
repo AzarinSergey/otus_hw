@@ -130,7 +130,7 @@ SELECT show_trgm(passenger_name) FROM bookings.tickets LIMIT 10;
 SELECT show_limit(), set_limit(0.3);
 
 -- Выполняем запросы и смотрим уровень совпадения
-select passenger_name, similarity(title, 'panov') from bookings.tickets 
+select passenger_name, similarity(passenger_name, 'panov') from bookings.tickets 
 where passenger_name % 'panov'
 
 --##############################################################################################################
