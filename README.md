@@ -19,6 +19,8 @@ password: ```password``` (for all resources)
 
 4. Using [madlib](hw/madlib_scripts.sql):
 
-/usr/local/madlib/bin/madpack -s madlib -p postgres install
+docker exec -it 5d5278d5af80 /usr/local/madlib/bin/madpack -s madlib -p postgres install
 
-psql -U admin -d dev_kit_db -c "grant usage on schema madlib to dev_kit_user;"
+docker exec -it 5d5278d5af80 psql -U admin -d dev_kit_db -c "grant usage on schema madlib to dev_kit_user;"
+
+docker exec -it 5d5278d5af80 psql -U admin -d dev_kit_db -c "CREATE EXTENSION hunspell_en_us;"
