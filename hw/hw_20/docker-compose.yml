@@ -1,0 +1,38 @@
+  
+version: '3.1'
+
+services:
+  otusdb:
+    container_name: hw_20_otusdb
+    image: mysql:8.0.15
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: otus_word
+      MYSQL_USER: otus
+      MYSQL_PASSWORD: 12345
+    volumes:
+      - data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./custom.conf:/etc/mysql/conf.d
+    expose:
+      - "3306"
+    ports:
+      - "3309:3306"
+    networks:
+      - mysql-ntw
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 11989:8080
+    networks:
+      - mysql-ntw
+
+
+volumes:
+  data:
+networks:
+  mysql-ntw:
+    name: mysql-ntw
+    driver: bridge

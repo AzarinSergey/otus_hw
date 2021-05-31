@@ -63,7 +63,6 @@ services:
     networks:
       - dev-kit-network
 
-      
 volumes:
   dev-kit-redis:
   dev-kit-pgadmin:
