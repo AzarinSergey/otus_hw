@@ -3,7 +3,7 @@ version: '3.1'
 
 services:
   otusdb:
-    container_name: hw_20_otusdb
+    container_name: otus_mysql
     image: mysql:8.0.15
     environment:
       MYSQL_ROOT_PASSWORD: 12345
@@ -20,14 +20,22 @@ services:
       - "3309:3306"
     networks:
       - mysql-ntw
-  
-  adminer:
-    image: adminer
+
+  phpmyadmin:
+    container_name: otus_phpmyadmin
+    image: phpmyadmin
     restart: always
     ports:
-      - 11989:8080
+      - 11989:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: otus_mysql
+      PMA_USER: root
+      PMA_PORT: 3306
+      PMA_PASSWORD: 12345
     networks:
       - mysql-ntw
+  
 
 
 volumes:
